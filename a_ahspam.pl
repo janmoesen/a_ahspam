@@ -29,7 +29,7 @@ $VERSION = '0.1';
 sub a_ahspam_process_message {
 	my ($server, $msg, $target) = @_;
 	return unless $target =~ /^#(wijs|catena|lolwut)/;
-	return unless $msg =~ m/\b(ash|bash|brash|cache|cash|clash|crash|dash|flash|gash|gnash|hache|hash|lash|mash|rash|sash|slash|splash|stache|stash|thrash|trash)\b/i;
+	return unless $msg =~ m/\b(ash|bash|brash|cache|cash|clash|crash|dash|flash|gash|gnash|hache|hash|lash|mash|rash|sash|slash|smash|splash|stache|stash|thrash|trash)\b/i;
 	my $message = "\"$1, a-ah, saviour of the universe!\"";
 	return if $msg eq $message;
 	$server->command("msg $target $message");
