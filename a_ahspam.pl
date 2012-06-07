@@ -20,7 +20,6 @@ $VERSION = '0.1';
 	description => 'Respond to words that rhyme with "Flash".',
 	license     => 'GPL',
 	url         => 'http://jan.moesen.nu/',
-	changed     => 'Wed Jun 06 15:15:07 +0200 2012',
 );
 
 sub a_ahspam_process_message {
