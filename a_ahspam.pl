@@ -24,7 +24,7 @@ $VERSION = '0.1';
 
 sub a_ahspam_process_message {
 	my ($server, $msg, $target) = @_;
-	return unless $target =~ /^#(wijs|catena|lolwut)/;
+	return unless $target =~ /^#(catena|lolwut)/;
 	return unless $msg =~ m/\b(netlash|ash|bash|brash|cache|cash|clash|crash|dash|flash|gash|gnash|hache|hash|lash|mash|rash|sash|slash|smash|splash|stache|stash|thrash|trash)\b/i;
 	my $word = ucfirst($1);
 	my $message = "\"$word, a-ah, saviour of the universe!\"";
