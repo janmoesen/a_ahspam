@@ -11,6 +11,9 @@
 
 use strict;
 use Irssi;
+use JSON::XS;
+use LWP::Simple;
+use HTML::TokeParser;
 use vars qw($VERSION %IRSSI);
 
 $VERSION = '0.1';
@@ -20,14 +23,14 @@ $VERSION = '0.1';
 	description => 'Respond to words that rhyme with "Flash".',
 	license     => 'GPL',
 	url         => 'http://jan.moesen.nu/',
+	changed     => 'Wed Jun 06 15:15:07 +0200 2012',
 );
 
 sub a_ahspam_process_message {
 	my ($server, $msg, $target) = @_;
-	return unless $target =~ /^#(catena|lolwut)/;
-	return unless $msg =~ m/\b(netlash|ash|bash|brash|cache|cash|clash|crash|dash|flash|gash|gnash|hache|hash|lash|mash|rash|sash|slash|smash|splash|stache|stash|thrash|trash)\b/i;
-	my $word = ucfirst($1);
-	my $message = "\"$word, a-ah, saviour of the universe!\"";
+	return unless $target =~ /^#(wijs|catena|lolwut)/;
+	return unless $msg =~ m/\b(ash|bash|brash|cache|cash|clash|crash|dash|flash|gash|gnash|hache|hash|lash|mash|rash|sash|slash|smash|splash|stache|stash|thrash|trash)\b/i;
+	my $message = "\"$1, a-ah, saviour of the universe!\"";
 	return if $msg eq $message;
 	$server->command("msg $target $message");
 }
